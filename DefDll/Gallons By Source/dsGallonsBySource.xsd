@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsGallonsBySource" targetNamespace="http://tempuri.org/dsGallonsBySource.xsd" xmlns:mstns="http://tempuri.org/dsGallonsBySource.xsd" xmlns="http://tempuri.org/dsGallonsBySource.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsGallonsBySource" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsGallonsBySource" msprop:Generator_UserDSName="dsGallonsBySource">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Gallons" msprop:Generator_TableClassName="GallonsDataTable" msprop:Generator_TableVarName="tableGallons" msprop:Generator_TablePropName="Gallons" msprop:Generator_RowDeletingName="GallonsRowDeleting" msprop:Generator_RowChangingName="GallonsRowChanging" msprop:Generator_RowEvHandlerName="GallonsRowChangeEventHandler" msprop:Generator_RowDeletedName="GallonsRowDeleted" msprop:Generator_UserTableName="Gallons" msprop:Generator_RowChangedName="GallonsRowChanged" msprop:Generator_RowEvArgName="GallonsRowChangeEvent" msprop:Generator_RowClassName="GallonsRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Shipped" msprop:Generator_ColumnVarNameInTable="columnShipped" msprop:Generator_ColumnPropNameInRow="Shipped" msprop:Generator_ColumnPropNameInTable="ShippedColumn" msprop:Generator_UserColumnName="Shipped" type="xs:long" minOccurs="0" />
+              <xs:element name="Source" msprop:Generator_ColumnVarNameInTable="columnSource" msprop:Generator_ColumnPropNameInRow="Source" msprop:Generator_ColumnPropNameInTable="SourceColumn" msprop:Generator_UserColumnName="Source" type="xs:string" minOccurs="0" />
+              <xs:element name="Location" msprop:Generator_ColumnVarNameInTable="columnLocation" msprop:Generator_ColumnPropNameInRow="Location" msprop:Generator_ColumnPropNameInTable="LocationColumn" msprop:Generator_UserColumnName="Location" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
