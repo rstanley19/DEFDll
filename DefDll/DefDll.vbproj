@@ -167,6 +167,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\SalesOrder2013\SalesOrder2013\bin\Debug\SalesOrder2013.dll</HintPath>
     </Reference>
+    <Reference Include="SharedDll, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\SharedDll\SharedDll\bin\Debug\SharedDll.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -202,6 +206,18 @@
     <Compile Include="Data\msNotep.vb" />
     <Compile Include="Data\msSlmp.vb" />
     <Compile Include="Data\SoInvp.vb" />
+    <Compile Include="Item Master\ucItem.Designer.vb">
+      <DependentUpon>ucItem.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Item Master\ucItem.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Item Master\FrmItemMasterDesktop.Designer.vb">
+      <DependentUpon>FrmItemMasterDesktop.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Item Master\FrmItemMasterDesktop.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Desktop\ucWarrantyInquiry.Designer.vb">
       <DependentUpon>ucWarrantyInquiry.vb</DependentUpon>
     </Compile>
@@ -295,9 +311,26 @@
     <Compile Include="Desktop\ucCustomerInquiry.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="PayOutsideFreight\Data\SoApDhp.vb" />
-    <Compile Include="PayOutsideFreight\Data\SoApDip.vb" />
-    <Compile Include="PayOutsideFreight\Data\SoApDmp.vb" />
+    <Compile Include="Data\SoApDhp.vb" />
+    <Compile Include="Data\SoApDip.vb" />
+    <Compile Include="Data\SoApDmp.vb" />
+    <Compile Include="Data\soOrddp.vb" />
+    <Compile Include="PayDirectShip\dsDirectShip.Designer.vb" />
+    <Compile Include="PayDirectShip\FrmDirectShipDocumentType.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PayDirectShip\FrmDirectShipQueue.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PayDirectShip\FrmInvDirectShip2023.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PayDirectShip\FrmInventoryCostAnalysis.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PayDirectShip\rpDirectShip.vb">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="PayOutsideFreight\FrmOutsideFreightDocumentType.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -307,8 +340,20 @@
     <Compile Include="PayOutsideFreight\FrmInvOutsideFreight.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Update BOL\FrmUpdateBOL.Designer.vb">
+      <DependentUpon>FrmUpdateBOL.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Update BOL\FrmUpdateBOL.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Item Master\ucItem.resx">
+      <DependentUpon>ucItem.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Item Master\FrmItemMasterDesktop.resx">
+      <DependentUpon>FrmItemMasterDesktop.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Desktop\ucWarrantyInquiry.resx">
       <DependentUpon>ucWarrantyInquiry.vb</DependentUpon>
     </EmbeddedResource>
@@ -353,6 +398,22 @@
     <EmbeddedResource Include="Desktop\ucCustomerInquiry.resx">
       <DependentUpon>ucCustomerInquiry.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PayDirectShip\FrmDirectShipDocumentType.resx">
+      <DependentUpon>FrmDirectShipDocumentType.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PayDirectShip\FrmDirectShipQueue.resx">
+      <DependentUpon>FrmDirectShipQueue.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PayDirectShip\FrmInvDirectShip2023.resx">
+      <DependentUpon>FrmInvDirectShip2023.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PayDirectShip\FrmInventoryCostAnalysis.resx">
+      <DependentUpon>FrmInventoryCostAnalysis.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PayDirectShip\rpDirectShip.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpDirectShip1.vb</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="PayOutsideFreight\FrmOutsideFreightDocumentType.resx">
       <DependentUpon>FrmOutsideFreightDocumentType.vb</DependentUpon>
     </EmbeddedResource>
@@ -361,6 +422,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PayOutsideFreight\FrmInvOutsideFreight.resx">
       <DependentUpon>FrmInvOutsideFreight.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Update BOL\FrmUpdateBOL.resx">
+      <DependentUpon>FrmUpdateBOL.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -390,6 +454,13 @@
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="PayDirectShip\dsDirectShip.xsc">
+      <DependentUpon>dsDirectShip.xsd</DependentUpon>
+    </None>
+    <None Include="PayDirectShip\dsDirectShip.xsd" />
+    <None Include="PayDirectShip\dsDirectShip.xss">
+      <DependentUpon>dsDirectShip.xsd</DependentUpon>
+    </None>
     <None Include="Resources\checkmark_icon.gif" />
   </ItemGroup>
   <ItemGroup>
@@ -400,6 +471,15 @@
       <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
       <VersionMajor>2</VersionMajor>
       <VersionMinor>5</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Excel">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>9</VersionMinor>
       <Lcid>0</Lcid>
       <WrapperTool>primary</WrapperTool>
       <Isolated>False</Isolated>
@@ -423,11 +503,29 @@
       <Isolated>False</Isolated>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Futronic.bmp" />
   </ItemGroup>
   <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\cycle.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Printer.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\ArrowLeft.bmp" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

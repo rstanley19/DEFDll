@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsDirectShip" targetNamespace="http://tempuri.org/dsDirectShip.xsd" xmlns:mstns="http://tempuri.org/dsDirectShip.xsd" xmlns="http://tempuri.org/dsDirectShip.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsDirectShip" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsDirectShip" msprop:Generator_UserDSName="dsDirectShip">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DirectShip" msprop:Generator_TableClassName="DirectShipDataTable" msprop:Generator_TableVarName="tableDirectShip" msprop:Generator_TablePropName="DirectShip" msprop:Generator_RowDeletingName="DirectShipRowDeleting" msprop:Generator_UserTableName="DirectShip" msprop:Generator_RowChangingName="DirectShipRowChanging" msprop:Generator_RowEvHandlerName="DirectShipRowChangeEventHandler" msprop:Generator_RowDeletedName="DirectShipRowDeleted" msprop:Generator_RowEvArgName="DirectShipRowChangeEvent" msprop:Generator_RowChangedName="DirectShipRowChanged" msprop:Generator_RowClassName="DirectShipRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Vendor_x0023_" msprop:Generator_ColumnVarNameInTable="_columnVendor_" msprop:Generator_ColumnPropNameInRow="_Vendor_" msprop:Generator_ColumnPropNameInTable="_Vendor_Column" msprop:Generator_UserColumnName="Vendor#" type="xs:int" minOccurs="0" />
+              <xs:element name="Vendor" msprop:Generator_ColumnVarNameInTable="columnVendor" msprop:Generator_ColumnPropNameInRow="Vendor" msprop:Generator_ColumnPropNameInTable="VendorColumn" msprop:Generator_UserColumnName="Vendor" type="xs:string" minOccurs="0" />
+              <xs:element name="Invoice" msprop:Generator_ColumnVarNameInTable="columnInvoice" msprop:Generator_ColumnPropNameInRow="Invoice" msprop:Generator_ColumnPropNameInTable="InvoiceColumn" msprop:Generator_UserColumnName="Invoice" type="xs:long" minOccurs="0" />
+              <xs:element name="Billed" msprop:Generator_ColumnVarNameInTable="columnBilled" msprop:Generator_ColumnPropNameInRow="Billed" msprop:Generator_ColumnPropNameInTable="BilledColumn" msprop:Generator_UserColumnName="Billed" type="xs:string" minOccurs="0" />
+              <xs:element name="Date" msprop:Generator_ColumnVarNameInTable="columnDate" msprop:Generator_ColumnPropNameInRow="_Date" msprop:Generator_ColumnPropNameInTable="DateColumn" msprop:Generator_UserColumnName="Date" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Customer" msprop:Generator_ColumnVarNameInTable="columnCustomer" msprop:Generator_ColumnPropNameInRow="Customer" msprop:Generator_ColumnPropNameInTable="CustomerColumn" msprop:Generator_UserColumnName="Customer" type="xs:string" minOccurs="0" />
+              <xs:element name="City" msprop:Generator_ColumnVarNameInTable="columnCity" msprop:Generator_ColumnPropNameInRow="City" msprop:Generator_ColumnPropNameInTable="CityColumn" msprop:Generator_UserColumnName="City" type="xs:string" minOccurs="0" />
+              <xs:element name="State" msprop:Generator_ColumnVarNameInTable="columnState" msprop:Generator_ColumnPropNameInRow="State" msprop:Generator_ColumnPropNameInTable="StateColumn" msprop:Generator_UserColumnName="State" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -21,6 +21,8 @@
 
         Dim mymsSlmp As New iSeries.msSlmp(inUserId)
 
+        mySetHandshakeShared = New SharedDll.Class1
+        mySetHandshakeShared.SetHandShake(UserId, UserName, UserPassword, smtp, PassApplicationProductNameToDLL, PassApplicationStartupPathToDLL, myPrivateUserFolder, iSeriesIP)
     End Sub
 
     Public Sub BuildSalesmanList()

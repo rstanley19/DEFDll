@@ -68,7 +68,7 @@ Public Class ucCustomer
             If e.Tab.TabPage.Controls.Count = 0 Then
                 Dim mySetHandshake As New CustomerMaintenance.Class1
                 mySetHandshake.SetHandShake(UserId, UserName, UserPassword, smtp, PassApplicationProductNameToDLL, PassApplicationStartupPathToDLL, myPrivateUserFolder, iSeriesIP)
-                myUcCreditImages = New CustomerMaintenance.ucCreditImages(myMsCustp.cmAcc_, "", 1, Nothing, False, UserId, UserName, UserPassword, "DEF", False)
+                myUcCreditImages = New CustomerMaintenance.ucCreditImages(myMsCustp.cmBlto, myMsCustp.cmAcc_, "", 1, Nothing, False, UserId, UserName, UserPassword, "DEF", False)
                 '                myUcCreditImages.SetDefaults(UserId, UserName, smtp, PassApplicationProductNameToDLL, PassApplicationStartupPathToDLL)
                 AddHandler myUcCreditImages.CloseMe, AddressOf CloseMyOrder
                 AddHandler myUcCreditImages.ShowImage, AddressOf ShowImage

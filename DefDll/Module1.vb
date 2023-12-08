@@ -3,6 +3,8 @@ Imports Infragistics.Win.UltraWinGrid
 Imports System.Text
 
 Module Module1
+    Public mySetHandshakeShared As SharedDll.Class1
+
     Public UserName As String
     Public UserId As String
     Public UserPassword As String
@@ -48,9 +50,9 @@ Module Module1
         End Try
     End Function
 
-    Public Function NoNullNumber(ByVal inValue As Object) As decimal
+    Public Function NoNullNumber(ByVal inValue As Object) As Decimal
         Try
-            If IsNumeric(inValue) Then Return Convert.Todecimal(inValue)
+            If IsNumeric(inValue) Then Return Convert.ToDecimal(inValue)
             Return 0
         Catch
             Return 0
@@ -598,6 +600,33 @@ Module Module1
         If InType = 203 Then Return "Direct Ship Backup"
 
         Return "Unknown"
+    End Function
+
+#End Region
+
+#Region "Get Cost"
+    Public Function GetCost(inAverageCost As Decimal, inUom As String, inPuom As String, inUom2 As String, inMultiplier2 As Integer, inUom3 As String, inMultiplier3 As Integer, inInv1 As String, inInv2 As String, inInv3 As String) As Decimal
+
+
+        Select Case inUom
+            Case Is = inPuom
+                Return inAverageCost
+            Case Is = inUom2
+                If inInv1 = "Y" Then
+                    Return inAverageCost * inMultiplier2
+                Else
+                    Return inAverageCost
+                End If
+            Case Is = inUom3
+                If inInv1 = "Y" Or inInv2 = "Y" Then
+                    Return inAverageCost * inMultiplier3
+                Else
+                    Return inAverageCost
+                End If
+        End Select
+
+        Return inAverageCost
+
     End Function
 
 #End Region
