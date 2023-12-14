@@ -206,6 +206,29 @@
     <Compile Include="Data\msNotep.vb" />
     <Compile Include="Data\msSlmp.vb" />
     <Compile Include="Data\SoInvp.vb" />
+    <Compile Include="Inventory Adjustment\dsInventoryAdjustment.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsInventoryAdjustment.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Inventory Adjustment\FrmInventoryAdjustment.Designer.vb">
+      <DependentUpon>FrmInventoryAdjustment.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Inventory Adjustment\FrmInventoryAdjustment.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventory Adjustment\rpInventoryAdjustment.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpInventoryAdjustment.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Inventory Adjustment\ucInventoryAdjustmentDetails.Designer.vb">
+      <DependentUpon>ucInventoryAdjustmentDetails.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Inventory Adjustment\ucInventoryAdjustmentDetails.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Item Master\ucItem.Designer.vb">
       <DependentUpon>ucItem.vb</DependentUpon>
     </Compile>
@@ -348,6 +371,16 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Inventory Adjustment\FrmInventoryAdjustment.resx">
+      <DependentUpon>FrmInventoryAdjustment.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventory Adjustment\rpInventoryAdjustment.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpInventoryAdjustment.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventory Adjustment\ucInventoryAdjustmentDetails.resx">
+      <DependentUpon>ucInventoryAdjustmentDetails.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Item Master\ucItem.resx">
       <DependentUpon>ucItem.vb</DependentUpon>
     </EmbeddedResource>
@@ -438,6 +471,17 @@
     </None>
     <None Include="Gallons By Source\dsGallonsBySource.xss">
       <DependentUpon>dsGallonsBySource.xsd</DependentUpon>
+    </None>
+    <None Include="Inventory Adjustment\dsInventoryAdjustment.xsc">
+      <DependentUpon>dsInventoryAdjustment.xsd</DependentUpon>
+    </None>
+    <None Include="Inventory Adjustment\dsInventoryAdjustment.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsInventoryAdjustment.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Inventory Adjustment\dsInventoryAdjustment.xss">
+      <DependentUpon>dsInventoryAdjustment.xsd</DependentUpon>
     </None>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>

@@ -4,7 +4,7 @@ Imports System.Text
 
 Module Module1
     Public mySetHandshakeShared As SharedDll.Class1
-
+    Public Parms As Object
     Public UserName As String
     Public UserId As String
     Public UserPassword As String
@@ -180,7 +180,7 @@ Module Module1
     Public Sub QueryDataBaseForValueLists()
 
         Dim Daily_QryData As ADODB.Recordset
-        Dim Parms As Object
+
         If Not connAS400.State = 1 Then
             connAS400.Open("Provider=IBMDA400;Data Source=" & iSeriesIP & ";", UserId, UserPassword)
         End If
