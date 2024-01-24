@@ -11,7 +11,8 @@ Public Class ucItem
     Private myMiLocp As SharedDll.Iseries.miLocp
     Private myRow As Infragistics.Win.UltraWinGrid.UltraGridRow
 
-    Public Sub New(ByVal inTabKey As String, inReturnToTab As Integer, inVendorsTable As DataTable, inItem As Integer, inRow As Infragistics.Win.UltraWinGrid.UltraGridRow, Optional inMinvtp As SharedDll.Iseries.mInvtp = Nothing)
+    Public Sub New(ByVal inTabKey As String, inReturnToTab As Integer, inVendorsTable As DataTable, inItem As Integer, inRow As Infragistics.Win.UltraWinGrid.UltraGridRow,
+                   inClassTable As DataTable, inCategoryTable As DataTable, Optional inMinvtp As SharedDll.Iseries.mInvtp = Nothing)
 
         ' This call is required by the designer.
         InitializeComponent()
@@ -27,6 +28,16 @@ Public Class ucItem
         cbImVend.ValueMember = inVendorsTable.Columns("Vendor").ColumnName
         cbImVend.DisplayMember = inVendorsTable.Columns("Name").ColumnName
         cbImVend.Text = ""
+
+        cbImpcl1.DataSource = inClassTable
+        cbImpcl1.ValueMember = inClassTable.Columns("Class").ColumnName
+        cbImpcl1.DisplayMember = inClassTable.Columns("Description").ColumnName
+        cbImpcl1.Text = ""
+
+        cbImpcat.DataSource = inCategoryTable
+        cbImpcat.ValueMember = inCategoryTable.Columns("Category").ColumnName
+        cbImpcat.DisplayMember = inCategoryTable.Columns("Description").ColumnName
+        cbImpcat.Text = ""
 
         TxtFrom.Value = DateAdd(DateInterval.Day, -1, Now)
         TxtTo.Value = Now
@@ -68,6 +79,8 @@ Public Class ucItem
             TxtImAvgf.Value = .imAvgf
             TxtImGals.Value = .imGals
             TxtImQoh.Value = .imQtoh
+            cbImpcl1.Value = .imPcl1
+            cbImpcat.Value = .imPcat
 
         End With
         'ChangeToReadOnly(UltraTabPageControl1, True)
@@ -124,6 +137,8 @@ Public Class ucItem
             .imDsb2 = GetYesNo(cbImDsb2.Checked)
             .imVend = cbImVend.Value
             .imSize = TxtImSize.Text
+            .imPcat = cbImpcat.Value
+            .imPcl1 = cbImpcl1.Value
 
             .imStdc = TxtImStdc.Value
             .imGals = TxtImGals.Value

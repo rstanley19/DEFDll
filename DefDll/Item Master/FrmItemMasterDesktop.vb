@@ -35,6 +35,8 @@ Public Class FrmItemMasterDesktop
 
         ' Add any initialization after the InitializeComponent() call.
         GetVendors()
+        GetClass()
+        GetCategory()
 
     End Sub
 
@@ -343,7 +345,7 @@ GetType(Infragistics.Win.UltraWinGrid.ColumnHeader))
         End If
 
 
-        Dim myucItem As New ucItem("A" & KeyCounter.ToString, inReturnToTab, DSVendorsTable, inItem, inRow, inMinvtp)
+        Dim myucItem As New ucItem("A" & KeyCounter.ToString, inReturnToTab, DSVendorsTable, inItem, inRow, DSClassTable, DSCategoryTable, inMinvtp)
         'myucItemDetails.ShowIt()
         AddHandler myucItem.CloseMe, AddressOf ClosemyucItem
 
@@ -530,5 +532,62 @@ GetType(Infragistics.Win.UltraWinGrid.ColumnHeader))
         rs.Close()
         rs = Nothing
     End Sub
+
+    Dim DSClassTable As DataTable
+    Private Sub GetClass()
+        ' Item Master Vendors
+        Dim rs As ADODB.Recordset
+        rs = connAS400.Execute("SELECT tatkey, tadesc FROM daily.potablp 
+        WHERE tatabl  = 'ICL' order by tadesc", Parms, -1)
+
+        DSClassTable = New DataTable("DSClassTable")
+        DSClassTable.Columns.Add("Class", GetType(String))
+        DSClassTable.Columns.Add("Description", GetType(String))
+
+        Dim DSClassRow As DataRow = DSClassTable.NewRow
+        DSClassRow("Class") = ""
+        DSClassRow("Description") = "Not Selected"
+        DSClassTable.Rows.Add(DSClassRow)
+
+        While Not rs.EOF
+            DSClassRow = DSClassTable.NewRow
+            DSClassRow("Class") = rs.Fields("tatkey").Value
+            DSClassRow("Description") = rs.Fields("tatkey").Value & "-" & rs.Fields("tadesc").Value
+            DSClassTable.Rows.Add(DSClassRow)
+            rs.MoveNext()
+        End While
+
+        rs.Close()
+        rs = Nothing
+    End Sub
+
+    Dim DSCategoryTable As DataTable
+    Private Sub GetCategory()
+        ' Item Master Vendors
+        Dim rs As ADODB.Recordset
+        rs = connAS400.Execute("SELECT tatkey, tadesc FROM daily.potablp 
+        WHERE tatabl  = 'ICA' order by tadesc", Parms, -1)
+
+        DSCategoryTable = New DataTable("DSCategoryTable")
+        DSCategoryTable.Columns.Add("Category", GetType(String))
+        DSCategoryTable.Columns.Add("Description", GetType(String))
+
+        Dim DSCategoryRow As DataRow = DSCategoryTable.NewRow
+        DSCategoryRow("Category") = ""
+        DSCategoryRow("Description") = "Not Selected"
+        DSCategoryTable.Rows.Add(DSCategoryRow)
+
+        While Not rs.EOF
+            DSCategoryRow = DSCategoryTable.NewRow
+            DSCategoryRow("Category") = rs.Fields("tatkey").Value
+            DSCategoryRow("Description") = rs.Fields("tatkey").Value & "-" & rs.Fields("tadesc").Value
+            DSCategoryTable.Rows.Add(DSCategoryRow)
+            rs.MoveNext()
+        End While
+
+        rs.Close()
+        rs = Nothing
+    End Sub
+
 
 End Class

@@ -91,6 +91,10 @@ Partial Class ucItem
         Me.ToolsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AllowCostOnHandUpdateToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.cbImpcl1 = New Infragistics.Win.UltraWinEditors.UltraComboEditor()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.cbImpcat = New Infragistics.Win.UltraWinEditors.UltraComboEditor()
         Me.UltraTabPageControl1.SuspendLayout()
         CType(Me.TxtIlSlot, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TxtImQoh, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -109,10 +113,16 @@ Partial Class ucItem
         CType(Me.UltraTabControl2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.UltraTabControl2.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
+        CType(Me.cbImpcl1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.cbImpcat, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'UltraTabPageControl1
         '
+        Me.UltraTabPageControl1.Controls.Add(Me.Label11)
+        Me.UltraTabPageControl1.Controls.Add(Me.cbImpcat)
+        Me.UltraTabPageControl1.Controls.Add(Me.Label10)
+        Me.UltraTabPageControl1.Controls.Add(Me.cbImpcl1)
         Me.UltraTabPageControl1.Controls.Add(Me.TxtIlSlot)
         Me.UltraTabPageControl1.Controls.Add(Me.TxtImQoh)
         Me.UltraTabPageControl1.Controls.Add(Me.Label6)
@@ -158,17 +168,17 @@ Partial Class ucItem
         'TxtIlSlot
         '
         Me.TxtIlSlot.FormatString = "000"
-        Me.TxtIlSlot.Location = New System.Drawing.Point(161, 183)
+        Me.TxtIlSlot.Location = New System.Drawing.Point(161, 238)
         Me.TxtIlSlot.MaskInput = "nnn"
         Me.TxtIlSlot.MaxValue = 999
         Me.TxtIlSlot.MinValue = 0
         Me.TxtIlSlot.Name = "TxtIlSlot"
         Me.TxtIlSlot.Size = New System.Drawing.Size(30, 21)
-        Me.TxtIlSlot.TabIndex = 16
+        Me.TxtIlSlot.TabIndex = 14
         '
         'TxtImQoh
         '
-        Me.TxtImQoh.Location = New System.Drawing.Point(133, 314)
+        Me.TxtImQoh.Location = New System.Drawing.Point(133, 369)
         Me.TxtImQoh.MaskInput = "nnnnnnn.nn"
         Me.TxtImQoh.MaxValue = New Decimal(New Integer() {9999999, 0, 0, 0})
         Me.TxtImQoh.MinValue = 0
@@ -176,12 +186,12 @@ Partial Class ucItem
         Me.TxtImQoh.NumericType = Infragistics.Win.UltraWinEditors.NumericType.[Decimal]
         Me.TxtImQoh.ReadOnly = True
         Me.TxtImQoh.Size = New System.Drawing.Size(76, 21)
-        Me.TxtImQoh.TabIndex = 21
+        Me.TxtImQoh.TabIndex = 20
         '
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(31, 318)
+        Me.Label6.Location = New System.Drawing.Point(25, 373)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(92, 13)
         Me.Label6.TabIndex = 55
@@ -189,28 +199,28 @@ Partial Class ucItem
         '
         'TxtImGals
         '
-        Me.TxtImGals.Location = New System.Drawing.Point(133, 288)
+        Me.TxtImGals.Location = New System.Drawing.Point(133, 343)
         Me.TxtImGals.MaskInput = "nnnnn.nn"
         Me.TxtImGals.MaxValue = New Decimal(New Integer() {99999, 0, 0, 0})
         Me.TxtImGals.MinValue = 0
         Me.TxtImGals.Name = "TxtImGals"
         Me.TxtImGals.NumericType = Infragistics.Win.UltraWinEditors.NumericType.[Decimal]
         Me.TxtImGals.Size = New System.Drawing.Size(76, 21)
-        Me.TxtImGals.TabIndex = 20
+        Me.TxtImGals.TabIndex = 18
         '
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(215, 292)
+        Me.Label5.Location = New System.Drawing.Point(215, 347)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(123, 13)
-        Me.Label5.TabIndex = 53
+        Me.Label5.TabIndex = 19
         Me.Label5.Text = "(Used for Recovery Fee)"
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(50, 292)
+        Me.Label4.Location = New System.Drawing.Point(44, 347)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(73, 13)
         Me.Label4.TabIndex = 51
@@ -218,7 +228,7 @@ Partial Class ucItem
         '
         'TxtImAvgf
         '
-        Me.TxtImAvgf.Location = New System.Drawing.Point(133, 261)
+        Me.TxtImAvgf.Location = New System.Drawing.Point(133, 316)
         Me.TxtImAvgf.MaskInput = "nnnnn.nnn"
         Me.TxtImAvgf.MaxValue = New Decimal(New Integer() {99999, 0, 0, 0})
         Me.TxtImAvgf.MinValue = 0
@@ -226,12 +236,12 @@ Partial Class ucItem
         Me.TxtImAvgf.NumericType = Infragistics.Win.UltraWinEditors.NumericType.[Decimal]
         Me.TxtImAvgf.ReadOnly = True
         Me.TxtImAvgf.Size = New System.Drawing.Size(76, 21)
-        Me.TxtImAvgf.TabIndex = 19
+        Me.TxtImAvgf.TabIndex = 17
         '
         'Label22
         '
         Me.Label22.AutoSize = True
-        Me.Label22.Location = New System.Drawing.Point(17, 265)
+        Me.Label22.Location = New System.Drawing.Point(11, 320)
         Me.Label22.Name = "Label22"
         Me.Label22.Size = New System.Drawing.Size(106, 13)
         Me.Label22.TabIndex = 49
@@ -239,7 +249,7 @@ Partial Class ucItem
         '
         'TxtImAvgc
         '
-        Me.TxtImAvgc.Location = New System.Drawing.Point(133, 235)
+        Me.TxtImAvgc.Location = New System.Drawing.Point(133, 290)
         Me.TxtImAvgc.MaskInput = "nnnnn.nnn"
         Me.TxtImAvgc.MaxValue = New Decimal(New Integer() {99999, 0, 0, 0})
         Me.TxtImAvgc.MinValue = 0
@@ -247,12 +257,12 @@ Partial Class ucItem
         Me.TxtImAvgc.NumericType = Infragistics.Win.UltraWinEditors.NumericType.[Decimal]
         Me.TxtImAvgc.ReadOnly = True
         Me.TxtImAvgc.Size = New System.Drawing.Size(76, 21)
-        Me.TxtImAvgc.TabIndex = 18
+        Me.TxtImAvgc.TabIndex = 16
         '
         'Label21
         '
         Me.Label21.AutoSize = True
-        Me.Label21.Location = New System.Drawing.Point(52, 239)
+        Me.Label21.Location = New System.Drawing.Point(46, 294)
         Me.Label21.Name = "Label21"
         Me.Label21.Size = New System.Drawing.Size(71, 13)
         Me.Label21.TabIndex = 47
@@ -260,19 +270,19 @@ Partial Class ucItem
         '
         'TxtImStdc
         '
-        Me.TxtImStdc.Location = New System.Drawing.Point(133, 208)
+        Me.TxtImStdc.Location = New System.Drawing.Point(133, 263)
         Me.TxtImStdc.MaskInput = "nnnnn.nnn"
         Me.TxtImStdc.MaxValue = New Decimal(New Integer() {99999, 0, 0, 0})
         Me.TxtImStdc.MinValue = 0
         Me.TxtImStdc.Name = "TxtImStdc"
         Me.TxtImStdc.NumericType = Infragistics.Win.UltraWinEditors.NumericType.[Decimal]
         Me.TxtImStdc.Size = New System.Drawing.Size(76, 21)
-        Me.TxtImStdc.TabIndex = 17
+        Me.TxtImStdc.TabIndex = 15
         '
         'Label20
         '
         Me.Label20.AutoSize = True
-        Me.Label20.Location = New System.Drawing.Point(49, 212)
+        Me.Label20.Location = New System.Drawing.Point(43, 267)
         Me.Label20.Name = "Label20"
         Me.Label20.Size = New System.Drawing.Size(74, 13)
         Me.Label20.TabIndex = 45
@@ -280,16 +290,16 @@ Partial Class ucItem
         '
         'TxtIlSect
         '
-        Me.TxtIlSect.Location = New System.Drawing.Point(133, 183)
+        Me.TxtIlSect.Location = New System.Drawing.Point(133, 238)
         Me.TxtIlSect.MaxLength = 1
         Me.TxtIlSect.Name = "TxtIlSect"
         Me.TxtIlSect.Size = New System.Drawing.Size(22, 20)
-        Me.TxtIlSect.TabIndex = 15
+        Me.TxtIlSect.TabIndex = 13
         '
         'Label19
         '
         Me.Label19.AutoSize = True
-        Me.Label19.Location = New System.Drawing.Point(67, 186)
+        Me.Label19.Location = New System.Drawing.Point(61, 241)
         Me.Label19.Name = "Label19"
         Me.Label19.Size = New System.Drawing.Size(56, 13)
         Me.Label19.TabIndex = 43
@@ -297,16 +307,16 @@ Partial Class ucItem
         '
         'TxtImSize
         '
-        Me.TxtImSize.Location = New System.Drawing.Point(133, 156)
+        Me.TxtImSize.Location = New System.Drawing.Point(133, 211)
         Me.TxtImSize.MaxLength = 5
         Me.TxtImSize.Name = "TxtImSize"
         Me.TxtImSize.Size = New System.Drawing.Size(46, 20)
-        Me.TxtImSize.TabIndex = 14
+        Me.TxtImSize.TabIndex = 12
         '
         'Label18
         '
         Me.Label18.AutoSize = True
-        Me.Label18.Location = New System.Drawing.Point(96, 159)
+        Me.Label18.Location = New System.Drawing.Point(90, 214)
         Me.Label18.Name = "Label18"
         Me.Label18.Size = New System.Drawing.Size(27, 13)
         Me.Label18.TabIndex = 41
@@ -320,7 +330,7 @@ Partial Class ucItem
         Me.TxtImMul2.MinValue = 0
         Me.TxtImMul2.Name = "TxtImMul2"
         Me.TxtImMul2.Size = New System.Drawing.Size(39, 21)
-        Me.TxtImMul2.TabIndex = 8
+        Me.TxtImMul2.TabIndex = 5
         '
         'Label17
         '
@@ -337,7 +347,7 @@ Partial Class ucItem
         Me.cbImDsb2.Location = New System.Drawing.Point(375, 108)
         Me.cbImDsb2.Name = "cbImDsb2"
         Me.cbImDsb2.Size = New System.Drawing.Size(15, 14)
-        Me.cbImDsb2.TabIndex = 11
+        Me.cbImDsb2.TabIndex = 8
         Me.cbImDsb2.UseVisualStyleBackColor = True
         '
         'cbImPo2
@@ -346,7 +356,7 @@ Partial Class ucItem
         Me.cbImPo2.Location = New System.Drawing.Point(318, 108)
         Me.cbImPo2.Name = "cbImPo2"
         Me.cbImPo2.Size = New System.Drawing.Size(15, 14)
-        Me.cbImPo2.TabIndex = 10
+        Me.cbImPo2.TabIndex = 7
         Me.cbImPo2.UseVisualStyleBackColor = True
         '
         'cbImInv2
@@ -355,13 +365,13 @@ Partial Class ucItem
         Me.cbImInv2.Location = New System.Drawing.Point(261, 108)
         Me.cbImInv2.Name = "cbImInv2"
         Me.cbImInv2.Size = New System.Drawing.Size(15, 14)
-        Me.cbImInv2.TabIndex = 9
+        Me.cbImInv2.TabIndex = 6
         Me.cbImInv2.UseVisualStyleBackColor = True
         '
         'Label16
         '
         Me.Label16.AutoSize = True
-        Me.Label16.Location = New System.Drawing.Point(85, 105)
+        Me.Label16.Location = New System.Drawing.Point(79, 105)
         Me.Label16.Name = "Label16"
         Me.Label16.Size = New System.Drawing.Size(38, 13)
         Me.Label16.TabIndex = 34
@@ -373,7 +383,7 @@ Partial Class ucItem
         Me.TxtIm2uom.MaxLength = 2
         Me.TxtIm2uom.Name = "TxtIm2uom"
         Me.TxtIm2uom.Size = New System.Drawing.Size(32, 20)
-        Me.TxtIm2uom.TabIndex = 7
+        Me.TxtIm2uom.TabIndex = 4
         '
         'cbImDsb1
         '
@@ -446,7 +456,7 @@ Partial Class ucItem
         'Label13
         '
         Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(82, 133)
+        Me.Label13.Location = New System.Drawing.Point(76, 133)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(41, 13)
         Me.Label13.TabIndex = 23
@@ -458,12 +468,12 @@ Partial Class ucItem
         Me.cbImVend.MaxLength = 30
         Me.cbImVend.Name = "cbImVend"
         Me.cbImVend.Size = New System.Drawing.Size(257, 21)
-        Me.cbImVend.TabIndex = 13
+        Me.cbImVend.TabIndex = 9
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(96, 9)
+        Me.Label2.Location = New System.Drawing.Point(90, 9)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(27, 13)
         Me.Label2.TabIndex = 17
@@ -491,7 +501,7 @@ Partial Class ucItem
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(63, 35)
+        Me.Label3.Location = New System.Drawing.Point(57, 35)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(60, 13)
         Me.Label3.TabIndex = 4
@@ -500,7 +510,7 @@ Partial Class ucItem
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(85, 79)
+        Me.Label7.Location = New System.Drawing.Point(79, 79)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(38, 13)
         Me.Label7.TabIndex = 6
@@ -716,6 +726,40 @@ Partial Class ucItem
         Me.AllowCostOnHandUpdateToolStripMenuItem.Size = New System.Drawing.Size(231, 22)
         Me.AllowCostOnHandUpdateToolStripMenuItem.Text = "Allow Cost / On Hand Update"
         '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(85, 160)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(32, 13)
+        Me.Label10.TabIndex = 57
+        Me.Label10.Text = "Class"
+        '
+        'cbImpcl1
+        '
+        Me.cbImpcl1.Location = New System.Drawing.Point(133, 156)
+        Me.cbImpcl1.MaxLength = 30
+        Me.cbImpcl1.Name = "cbImpcl1"
+        Me.cbImpcl1.Size = New System.Drawing.Size(257, 21)
+        Me.cbImpcl1.TabIndex = 10
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Location = New System.Drawing.Point(68, 187)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(49, 13)
+        Me.Label11.TabIndex = 59
+        Me.Label11.Text = "Category"
+        '
+        'cbImpcat
+        '
+        Me.cbImpcat.Location = New System.Drawing.Point(133, 183)
+        Me.cbImpcat.MaxLength = 30
+        Me.cbImpcat.Name = "cbImpcat"
+        Me.cbImpcat.Size = New System.Drawing.Size(257, 21)
+        Me.cbImpcat.TabIndex = 11
+        '
         'ucItem
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -745,6 +789,8 @@ Partial Class ucItem
         Me.UltraTabControl2.ResumeLayout(False)
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
+        CType(Me.cbImpcl1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.cbImpcat, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -810,4 +856,8 @@ Partial Class ucItem
     Friend WithEvents Label9 As Windows.Forms.Label
     Friend WithEvents TxtQFrom As Windows.Forms.DateTimePicker
     Friend WithEvents CmdQRefresh As Windows.Forms.Button
+    Friend WithEvents Label11 As Windows.Forms.Label
+    Friend WithEvents cbImpcat As Infragistics.Win.UltraWinEditors.UltraComboEditor
+    Friend WithEvents Label10 As Windows.Forms.Label
+    Friend WithEvents cbImpcl1 As Infragistics.Win.UltraWinEditors.UltraComboEditor
 End Class
